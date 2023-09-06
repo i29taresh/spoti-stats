@@ -24,7 +24,10 @@ const StyledLoginButton = styled.a`
   }
 `;
 
-const LOGIN_URI = 'http://localhost:8888/login';
+const LOGIN_URI =
+  process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:8888/login'
+    : 'https://spoti-stats-25l6.onrender.com/login';
 
 const Login = () => (
   <StyledLoginContainer>
